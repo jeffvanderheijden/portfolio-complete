@@ -1,11 +1,8 @@
 import React, { createContext, useState } from "react";
 
-export const MouseContext = createContext({
-    cursorType: "",
-    cursorChangeHandler: () => { },
-});
+export const MouseContext = createContext();
 
-const MouseContextProvider = (props) => {
+const MouseContextProvider = ({ children }) => {
     const [cursorType, setCursorType] = useState("");
 
     const cursorChangeHandler = (cursorType) => {
@@ -19,7 +16,7 @@ const MouseContextProvider = (props) => {
                 cursorChangeHandler: cursorChangeHandler,
             }}
         >
-            {props.children}
+            {children}
         </MouseContext.Provider>
     );
 };

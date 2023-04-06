@@ -1,11 +1,9 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { MouseContext } from '../helpers/context/mouseContext'
 
 const IndexPage = () => {
-  const { cursorChangeHandler } = useContext(MouseContext)
-
   return (
     <>
       <h1>Home</h1>
@@ -16,15 +14,17 @@ const IndexPage = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <>
-          <Link 
-            to="/projects"
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")} 
-          >
-            Projects
-          </Link>
-        </>
+        <MouseContext.Consumer>
+          {({ cursorChangeHandler }) => (
+            <Link 
+              to="/projects"
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")} 
+            >
+              Projects
+            </Link>
+          )}
+        </MouseContext.Consumer>
       </motion.div>
     </>
   )

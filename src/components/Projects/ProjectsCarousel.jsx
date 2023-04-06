@@ -1,5 +1,6 @@
 import React, { useRef } from "react"
 import Slider from "react-slick"
+import { Link } from "gatsby"
 import { MouseContext } from '../../helpers/context/mouseContext'
 import "./ProjectsCarousel.scss"
 
@@ -26,14 +27,7 @@ const ProjectsCarousel = () => {
         speed: 500,
         appendDots: dots => (
             <div>
-                <button onClick={previous}>Prev</button>
                 <ul> {dots} </ul>
-                <button onClick={next}>next</button>
-            </div>
-        ),
-        customPaging: i => (
-            <div>
-                {i + 1}
             </div>
         )
     }
@@ -41,32 +35,68 @@ const ProjectsCarousel = () => {
     return (
         <MouseContext.Consumer>
             {({ cursorChangeHandler }) => (
-                <Slider ref={projectsSlider} {...settings}>
-                    <img 
-                        src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
-                        onMouseEnter={() => cursorChangeHandler("view")}
+                <div className="sliderWrapper">
+                    <div 
+                        className="previousHover" 
+                        onClick={previous}
+                        onMouseEnter={() => cursorChangeHandler("left")}
                         onMouseLeave={() => cursorChangeHandler("")}
-                        alt={"Project 1"}
                     />
-                    <img 
-                        src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
-                        onMouseEnter={() => cursorChangeHandler("view")}
-                        onMouseLeave={() => cursorChangeHandler("")}
-                        alt={"Project 2"}
+                    <div 
+                        className="nextHover"
+                        onClick={next}
+                        onMouseEnter={() => cursorChangeHandler("right")}
+                        onMouseLeave={() => cursorChangeHandler("")} 
                     />
-                    <img 
-                        src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
-                        onMouseEnter={() => cursorChangeHandler("view")}
-                        onMouseLeave={() => cursorChangeHandler("")}
-                        alt={"Project 3"}
-                    />
-                    <img 
-                        src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
-                        onMouseEnter={() => cursorChangeHandler("view")}
-                        onMouseLeave={() => cursorChangeHandler("")}
-                        alt={"Project 4"}
-                    />
-                </Slider>
+                    <Slider ref={projectsSlider} {...settings}>
+                        <Link 
+                            to="/projects"
+                            onMouseEnter={() => cursorChangeHandler("view")}
+                            onMouseLeave={() => cursorChangeHandler("")}
+                        >
+                            <img 
+                                src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
+                                alt={"Project 1"}
+                            />
+                        </Link>
+                        <Link 
+                            to="/projects"
+                            onMouseEnter={() => cursorChangeHandler("view")}
+                            onMouseLeave={() => cursorChangeHandler("")}
+                        >
+                            <img 
+                                src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
+                                onMouseEnter={() => cursorChangeHandler("view")}
+                                onMouseLeave={() => cursorChangeHandler("")}
+                                alt={"Project 2"}
+                            />
+                        </Link>
+                        <Link 
+                            to="/projects"
+                            onMouseEnter={() => cursorChangeHandler("view")}
+                            onMouseLeave={() => cursorChangeHandler("")}
+                        >
+                            <img 
+                                src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
+                                onMouseEnter={() => cursorChangeHandler("view")}
+                                onMouseLeave={() => cursorChangeHandler("")}
+                                alt={"Project 3"}
+                            />
+                        </Link>
+                        <Link 
+                            to="/projects"
+                            onMouseEnter={() => cursorChangeHandler("view")}
+                            onMouseLeave={() => cursorChangeHandler("")}
+                        >
+                            <img 
+                                src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
+                                onMouseEnter={() => cursorChangeHandler("view")}
+                                onMouseLeave={() => cursorChangeHandler("")}
+                                alt={"Project 4"}
+                            />
+                        </Link>
+                    </Slider>
+                </div>
             )}
         </MouseContext.Consumer>
     )

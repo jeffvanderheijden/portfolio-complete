@@ -55,6 +55,8 @@
 .ring.video,
 .ring.close,
 .ring.slider,
+.ring.left,
+.ring.right,
 .ring.view {
     width: 80px;
     height: 80px;
@@ -112,4 +114,11 @@
     margin-left: -10px;
     width: 30px;
     fill: #0070bc
+}
+
+.dot.left,
+.dot.right {
+    margin-left: -11px;
+    margin-top: -6px;
+    background-color: transparent;
 }

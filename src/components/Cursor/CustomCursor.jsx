@@ -24,7 +24,30 @@ const CustomCursor = () => {
             <div
                 style={{ left: `${x}px`, top: `${y}px`, opacity: isLoading ? '0' : '1' }}
                 className={"ring " + cursorType}
-            ></div>
+            />
+
+            {cursorType === 'left' && (
+                <div
+                    className={"dot " + cursorType}
+                    style={{ left: `${x}px`, top: `${y}px` }}
+                >
+                    <svg>
+                        <path fill={'#0070bc'} d="M10.29,0L.29,10c-.39,.39-.39,1.02,0,1.41l10,10,1.41-1.41L3.41,11.71h28.59v-2H3.41L11.7,1.42l-1.41-1.42Z"/>
+                    </svg>
+                </div>
+            )}
+
+            {cursorType === 'right' && (
+                <div
+                    className={"dot " + cursorType}
+                    style={{ left: `${x}px`, top: `${y}px` }}
+                >
+                    <svg>
+                        <path fill={'#0070bc'} d="M21.71,21.41l10-10c.39-.39,.39-1.02,0-1.41L21.71,0l-1.41,1.41,8.29,8.29H0v2H28.59l-8.29,8.29,1.41,1.42Z"/>
+                    </svg>
+                </div>
+            )}
+
             {cursorType === 'slider' && (
                 <div
                     className={"dot " + cursorType}
@@ -65,7 +88,7 @@ const CustomCursor = () => {
                 </div>
             )}
 
-            {cursorType !== 'slider' && cursorType !== 'view' && (
+            {cursorType !== 'slider' && cursorType !== 'view' && cursorType !== 'left' && cursorType !== 'right' && (
                 <div
                     className={"dot " + cursorType}
                     style={{ left: `${x}px`, top: `${y}px`, opacity: isLoading ? '0' : '1' }}

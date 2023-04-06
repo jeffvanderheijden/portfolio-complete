@@ -25,6 +25,7 @@ const PreLoader = ({ children }) => {
 
     return (
         <>
+            {children}
             {isLoading ? (
                 <div className="loading-screen">
                     <motion.div
@@ -50,7 +51,6 @@ const PreLoader = ({ children }) => {
                     />
                 </div>
             )}
-            {children}
         </>
     )
 }

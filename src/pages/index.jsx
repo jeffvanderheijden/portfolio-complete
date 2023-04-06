@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { MouseContext } from '../helpers/context/mouseContext'
 
+import ProjectsCarousel from "../components/Projects/ProjectsCarousel"
+
 const IndexPage = () => {
   return (
     <>
@@ -26,6 +28,8 @@ const IndexPage = () => {
           )}
         </MouseContext.Consumer>
       </motion.div>
+
+      <ProjectsCarousel />
     </>
   )
 }

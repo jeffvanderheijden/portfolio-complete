@@ -1,0 +1,51 @@
+.slick-track {
+    padding: 60px 0px;
+}
+
+.slick-slide {
+    padding: 0 15px;
+}
+
+.center .slick-slide,
+.center .slick-slide[aria-hidden="true"]:not(.slick-cloned)~.slick-cloned[aria-hidden="true"] {
+    transform: scale(1, 1);
+    opacity: .2;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Active center slide (You can change anything here for cenetr slide)*/
+.center .slick-center,
+.center .slick-slide[aria-hidden="true"]:not([tabindex="-1"])+.slick-cloned[aria-hidden="true"] {
+    transform: scale(1.2);
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+    img {
+        box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.center .slick-current.slick-active {
+    transform: scale(1.2);
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+
+    img {
+        box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Arrows and dots
+.slick-dots {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    bottom: auto !important;
+    width: auto !important;
+    display: flex !important;
+    ul {
+        padding: 0;
+    }
+}

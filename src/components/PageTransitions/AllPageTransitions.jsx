@@ -1,9 +1,10 @@
 import React from "react"
-import { AnimatePresence, motion } from "framer-motion";
-import { useLocation } from '@reach/router';
+import { AnimatePresence, motion } from "framer-motion"
+import { useLocation } from '@reach/router'
+import "./../../helpers/styles/reset.scss"
 
 const AllPageTransitions = ({ children }) => {
-    const location = useLocation();
+    const location = useLocation()
     
     return (
         <>
@@ -21,7 +22,7 @@ const AllPageTransitions = ({ children }) => {
                 </motion.div>
             </AnimatePresence>
         </>
-    );
-};
+    )
+}
 
-export default AllPageTransitions;
+export default AllPageTransitions

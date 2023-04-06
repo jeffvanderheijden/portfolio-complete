@@ -1,0 +1,113 @@
+.ring,
+.ring.white {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid rgba(0, 112, 188, 0.3);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+    will-change: width, height, transform, border;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.dot,
+.dot.white {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #0070bc;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.ring.white {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+}
+.dot.white {
+    background-color: #FFF;
+}
+
+.ring.hovered {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    border-color: lightgray;
+}
+
+.dot.hovered {
+    display: none;
+}
+
+.ring.video,
+.ring.close,
+.ring.slider,
+.ring.view {
+    width: 80px;
+    height: 80px;
+    border: none;
+    background-color: #FFF;
+}
+
+.dot.video {
+    width: 0px;
+    height: 0px;
+    margin-left: 3px;
+    background-color: transparent;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #0070bc;
+}
+
+.dot.close {
+    background-color: transparent;
+}
+.dot.close:before, .dot.close:after {
+    position: absolute;
+    left: 50%;
+    top: -6px;
+    transform: translate(-50%, -50%);
+    content: ' ';
+    height: 20px;
+    width: 3px;
+    background-color: #0070bc;
+}
+.dot.close:before {
+    transform: rotate(45deg);
+}
+.dot.close:after {
+    transform: rotate(-45deg);
+}
+
+.dot.slider {
+    margin-left: -11px;
+    margin-top: -11px;
+    background-color: transparent;
+}
+
+.dot.slider svg {
+    fill: #0070bc
+}
+
+.dot.view {
+    /* margin-left: -11px;
+    margin-top: -11px; */
+    background-color: transparent;
+}
+
+.dot.view svg {
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 30px;
+    fill: #0070bc
+}

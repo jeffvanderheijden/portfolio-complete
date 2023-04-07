@@ -3,13 +3,15 @@ import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { MouseContext } from '../helpers/context/mouseContext'
 
+import Header from "../components/Headers/Homepage/Header"
 import ProjectsCarousel from "../components/Projects/ProjectsCarousel"
 
 const IndexPage = () => {
   return (
     <>
+      <Header />
+
       <div className="container mx-auto">
-        <h1>Home</h1>
         <motion.div
           key={'indexCustomTransitions'}
           initial={{ opacity: 0 }}
@@ -30,6 +32,7 @@ const IndexPage = () => {
           </MouseContext.Consumer>
         </motion.div>
       </div>
+      
       <ProjectsCarousel />
     </>
   )

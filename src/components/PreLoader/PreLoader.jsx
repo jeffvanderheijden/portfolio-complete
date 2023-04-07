@@ -30,7 +30,7 @@ const PreLoader = ({ children }) => {
         <>
             {children}
             {isLoading ? (
-                <div className="loading-screen">
+                <div className="loadingScreen">
                     <motion.div
                         key="logoAnimation"
                         initial={{ opacity: 1, scale: 1 }}

@@ -1,6 +1,6 @@
-* {
-    cursor: none;
-}
+// * {
+//     cursor: none;
+// }
 
 .cursorRing,
 .cursorRing.white {
@@ -11,7 +11,6 @@
     height: 22px;
     border: 2px solid rgba(0, 112, 188, 0.3);
     border-radius: 100%;
-    transform: translate(-50%, -50%);
     transition-duration: 100ms;
     transition-timing-function: ease-out;
     will-change: width, height, transform, border;
@@ -22,13 +21,12 @@
 .dot,
 .dot.white {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 8px;
     height: 8px;
     background-color: #0070bc;
     border-radius: 100%;
-    transform: translate(-50%, -50%);
     z-index: 99999;
     pointer-events: none;
 }
@@ -82,7 +80,6 @@
     position: absolute;
     left: 50%;
     top: -6px;
-    transform: translate(-50%, -50%);
     content: ' ';
     height: 20px;
     width: 3px;

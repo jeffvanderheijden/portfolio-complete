@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react"
 
 const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = useState({ x: null, y: null });
+    const [mousePosition, setMousePosition] = useState({ x: null, y: null })
+    const [cursorVisible, setCursorVisible] = useState(true)
 
     useEffect(() => {
         const mouseMoveHandler = (event) => {
-            const { clientX, clientY } = event;
-            setMousePosition({ x: clientX, y: clientY });
-        };
-        document.addEventListener("mousemove", mouseMoveHandler);
+            const { clientX, clientY } = event
+            setMousePosition({ x: clientX, y: clientY })
+        }
+
+        const mouseEnterHandler = () => {
+            setCursorVisible(true)
+        }
+
+        const mouseLeaveHandler = () => {
+            setCursorVisible(false)
+        }
+
+        document.addEventListener("mousemove", mouseMoveHandler)
+        document.addEventListener("mouseenter", mouseEnterHandler)
+        document.addEventListener("mouseleave", mouseLeaveHandler)
 
         return () => {
-            document.removeEventListener("mousemove", mouseMoveHandler);
-        };
-    }, []);
+            document.removeEventListener("mousemove", mouseMoveHandler)
+            document.removeEventListener("mouseenter", mouseEnterHandler)
+            document.removeEventListener("mouseleave", mouseLeaveHandler)
+        }
+    }, [])
 
-    return mousePosition;
+    return { position: mousePosition, visible: cursorVisible }
 }
 
 export default useMousePosition

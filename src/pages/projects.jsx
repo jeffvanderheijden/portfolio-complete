@@ -13,8 +13,8 @@ const ProjectsPage = () => {
         animate={{ opacity: 1, transition: { delay: 1, duration: 0.5 } }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
-        I turn data into experiences people care about.
-        I turn data & information into emotions & experiences.
+        <h1>I turn data into experiences that people care about.</h1>
+        (turn into animation where "that people care about" turns into "that care about people")
          <MouseContext.Consumer>
           {({ cursorChangeHandler }) => (
             <Link 

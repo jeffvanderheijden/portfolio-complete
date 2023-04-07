@@ -1,35 +1,24 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { useContext } from "react"
 import useMousePosition from "../../helpers/hooks/useMousePosition"
 import { MouseContext } from "../../helpers/context/mouseContext"
 import './CustomCursor.scss'
 
 const CustomCursor = () => {
     const { cursorType } = useContext(MouseContext)
-    const { x, y } = useMousePosition()
-
-    const [isLoading, setIsLoading] = useState(true)
-
-    useEffect(() => {
-        const loadingTimer = setTimeout(() => {
-            setIsLoading(false)
-        }, 4000)
-
-        return () => {
-            clearTimeout(loadingTimer)
-        }
-    }, [])
+    const { position, visible } = useMousePosition()
+    const { x, y } = position
 
     return (
-        <>
+        <div style={{ opacity: visible ? 1 : 0}}>
             <div
-                style={{ left: `${x}px`, top: `${y}px`, opacity: isLoading ? '0' : '1' }}
+                style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 className={"cursorRing " + cursorType}
             />
 
             {cursorType === 'left' && (
                 <div
                     className={"dot " + cursorType}
-                    style={{ left: `${x}px`, top: `${y}px` }}
+                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 >
                     <svg>
                         <path fill={'#0070bc'} d="M10.29,0L.29,10c-.39,.39-.39,1.02,0,1.41l10,10,1.41-1.41L3.41,11.71h28.59v-2H3.41L11.7,1.42l-1.41-1.42Z"/>
@@ -40,7 +29,7 @@ const CustomCursor = () => {
             {cursorType === 'right' && (
                 <div
                     className={"dot " + cursorType}
-                    style={{ left: `${x}px`, top: `${y}px` }}
+                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 >
                     <svg>
                         <path fill={'#0070bc'} d="M21.71,21.41l10-10c.39-.39,.39-1.02,0-1.41L21.71,0l-1.41,1.41,8.29,8.29H0v2H28.59l-8.29,8.29,1.41,1.42Z"/>
@@ -51,7 +40,7 @@ const CustomCursor = () => {
             {cursorType === 'slider' && (
                 <div
                     className={"dot " + cursorType}
-                    style={{ left: `${x}px`, top: `${y}px` }}
+                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 >
                     <svg>
                         <g>
@@ -65,7 +54,7 @@ const CustomCursor = () => {
             {cursorType === 'view' && (
                 <div
                     className={"dot " + cursorType}
-                    style={{ left: `${x}px`, top: `${y}px` }}
+                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 >
                     <svg viewBox="0 0 456.8 456.8">
                         <g>
@@ -91,10 +80,10 @@ const CustomCursor = () => {
             {cursorType !== 'slider' && cursorType !== 'view' && cursorType !== 'left' && cursorType !== 'right' && (
                 <div
                     className={"dot " + cursorType}
-                    style={{ left: `${x}px`, top: `${y}px`, opacity: isLoading ? '0' : '1' }}
+                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
                 ></div>
             )}
-        </>
+        </div>
     );
 };
 

@@ -14,6 +14,7 @@ $cursorColorAlpha: rgba(235, 161, 14, 0.3);
     height: 22px;
     border: 2px solid $cursorColorAlpha;
     border-radius: 100%;
+    transition-property: color, background-color, width, height, border;
     transition-duration: 100ms;
     transition-timing-function: ease-out;
     will-change: width, height, transform, border;

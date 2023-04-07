@@ -12,10 +12,20 @@
         height: 100%;
         position: absolute;
     }
-    h1 {
-        font-size: 60px;
-        font-family: 'Sweet Sans Pro';
+    h1, h2 {
+        font-size: 40px;
+        font-family: 'Engravers MT';
+        line-height: 34px;
+        text-align: center;
+        margin: 10px 0px;
         text-transform: uppercase;
-        font-weight: 600;
+        text-shadow: 0px 0px 4px rgba(0,0,0,1.5);
+    }
+    h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: 'Sweet Sans Pro';
     }
 }

@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { motion } from "framer-motion"
 
+import LogoOuter from "./LogoOuter"
+import LogoInner from "./LogoInner"
+
 import "./PreLoader.scss"
 
 const PreLoader = ({ children }) => {
@@ -11,11 +14,11 @@ const PreLoader = ({ children }) => {
     useEffect(() => {
         const loadingTimer = setTimeout(() => {
             setIsLoading(false)
-        }, 2000)
+        }, 3600)
 
         const loadingHideTimer = setTimeout(() => {
             setLoaderHidden(true)
-        }, 2600);
+        }, 4200);
 
         return () => {
             clearTimeout(loadingTimer)
@@ -29,11 +32,46 @@ const PreLoader = ({ children }) => {
             {isLoading ? (
                 <div className="loading-screen">
                     <motion.div
-                        className="loading-bar"
-                        initial={{ width: 0 }}
-                        animate={{ width: "100%" }}
-                        transition={{ duration: 2 }}
-                    />
+                        key="logoAnimation"
+                        initial={{ opacity: 1, scale: 1 }}
+                        animate={{ opacity: 0, scale: 1.7 }}
+                        transition={{
+                            delay: 3, ease: "easeInOut" 
+                        }}
+                    >
+                        <div className="logoLoader">
+                            <div className="inner">
+                                <motion.div
+                                    key="outerLogo"
+                                    initial={{ scale: .7, opacity: 0 }}
+                                    animate={{ rotate: 180, scale: 1, opacity: 1 }}
+                                    transition={{
+                                        type: "spring",
+                                        delay: 1,
+                                        stiffness: 160,
+                                        damping: 30
+                                    }}
+                                >
+                                    <LogoOuter />
+                                </motion.div>
+                                <div className="brand">
+                                    <motion.div
+                                        key="brand"
+                                        initial={{ y: 50 }}
+                                        animate={{ y: 0 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 260,
+                                            damping: 30,
+                                            delay: .4
+                                        }}
+                                    >
+                                        <LogoInner />
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             ) : (
                 <div className={`content ${loaderHidden ? 'hidden' : ''}`}>

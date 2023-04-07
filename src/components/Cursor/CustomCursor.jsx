@@ -12,7 +12,7 @@ const CustomCursor = () => {
     useEffect(() => {
         const loadingTimer = setTimeout(() => {
             setIsLoading(false)
-        }, 2600)
+        }, 4000)
 
         return () => {
             clearTimeout(loadingTimer)

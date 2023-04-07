@@ -38,7 +38,7 @@ const ProjectsCarousel = () => {
                 <div className="sliderWrapper">
                     <div 
                         className="previousHover" 
-                        onClick={previous}
+                        onClick={() => { previous() }}
                         onMouseEnter={() => cursorChangeHandler("left")}
                         onMouseLeave={() => cursorChangeHandler("")}
                     />
@@ -66,8 +66,6 @@ const ProjectsCarousel = () => {
                         >
                             <img 
                                 src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
-                                onMouseEnter={() => cursorChangeHandler("view")}
-                                onMouseLeave={() => cursorChangeHandler("")}
                                 alt={"Project 2"}
                             />
                         </Link>
@@ -78,8 +76,6 @@ const ProjectsCarousel = () => {
                         >
                             <img 
                                 src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
-                                onMouseEnter={() => cursorChangeHandler("view")}
-                                onMouseLeave={() => cursorChangeHandler("")}
                                 alt={"Project 3"}
                             />
                         </Link>
@@ -90,8 +86,6 @@ const ProjectsCarousel = () => {
                         >
                             <img 
                                 src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
-                                onMouseEnter={() => cursorChangeHandler("view")}
-                                onMouseLeave={() => cursorChangeHandler("")}
                                 alt={"Project 4"}
                             />
                         </Link>

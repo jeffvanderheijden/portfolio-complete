@@ -10,7 +10,7 @@ const Header = () => {
     const placeholderText = [
         { type: "heading2", text: "I turn data into" },
         { type: "heading1", text: "experiences", color: "#eba10e" },
-        { type: "heading2", text: "that people care about" }
+        { type: "heading2", text: "people care about" }
     ]
 
     const container = {

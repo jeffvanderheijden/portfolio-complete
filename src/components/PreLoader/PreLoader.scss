@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #d4d4d4;
+    background-color: #fff;
     z-index: 1000;
 }
 
@@ -61,15 +61,6 @@
     }
 }
 
-.loading-bar-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: #0099ff;
-    border-radius: 10px;
-}
-
 .content {
     position: fixed;
     top: 0;
@@ -88,7 +79,7 @@
     left: 0;
     width: 100%;
     height: 50%;
-    background-color: #d4d4d4;
+    background-color: #fff;
 }
 
 .bottom-section {
@@ -97,5 +88,5 @@
     left: 0;
     width: 100%;
     height: 50%;
-    background-color: #d4d4d4;
+    background-color: #fff;
 }

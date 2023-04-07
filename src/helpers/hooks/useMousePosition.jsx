@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 const useMousePosition = () => {
-    const [mousePosition, setMousePosition] = useState({ x: null, y: null })
+    const [mousePosition, setMousePosition] = useState({ x: -50, y: -50 })
     const [cursorVisible, setCursorVisible] = useState(true)
 
     useEffect(() => {

@@ -1,6 +1,9 @@
-// * {
-//     cursor: none;
-// }
+* {
+    cursor: none;
+}
+
+$cursorColor: #eba10e;
+$cursorColorAlpha: rgba(235, 161, 14, 0.3);
 
 .cursorRing,
 .cursorRing.white {
@@ -9,7 +12,7 @@
     left: 0;
     width: 22px;
     height: 22px;
-    border: 2px solid rgba(0, 112, 188, 0.3);
+    border: 2px solid $cursorColorAlpha;
     border-radius: 100%;
     transition-duration: 100ms;
     transition-timing-function: ease-out;
@@ -25,14 +28,14 @@
     left: 0;
     width: 8px;
     height: 8px;
-    background-color: #0070bc;
+    background-color: $cursorColor;
     border-radius: 100%;
     z-index: 99999;
     pointer-events: none;
 }
 
 .cursorRing.white {
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid $cursorColorAlpha;
     border-radius: 100%;
 }
 .dot.white {
@@ -43,7 +46,7 @@
     width: 50px;
     height: 50px;
     border-width: 3px;
-    border-color: lightgray;
+    border-color: $cursorColor;
 }
 
 .dot.hovered {
@@ -70,7 +73,7 @@
     border-radius: 0;
     border-style: solid;
     border-width: 8px 0 8px 16px;
-    border-color: transparent transparent transparent #0070bc;
+    border-color: transparent transparent transparent $cursorColor;
 }
 
 .dot.close {
@@ -83,7 +86,7 @@
     content: ' ';
     height: 20px;
     width: 3px;
-    background-color: #0070bc;
+    background-color: $cursorColor;
 }
 .dot.close:before {
     transform: rotate(45deg);
@@ -110,7 +113,7 @@
     margin-top: -10px;
     margin-left: -10px;
     width: 30px;
-    fill: #0070bc
+    fill: $cursorColor
 }
 
 .dot.left,

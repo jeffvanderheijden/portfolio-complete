@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-Bold.woff2') format('woff2'),
+        url('SweetSansPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-Regular.woff2') format('woff2'),
+        url('SweetSansPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-HeavyItalic.woff2') format('woff2'),
+        url('SweetSansPro-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-BoldItalic.woff2') format('woff2'),
+        url('SweetSansPro-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-Italic.woff2') format('woff2'),
+        url('SweetSansPro-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sweet Sans Pro';
+    src: url('SweetSansPro-Heavy.woff2') format('woff2'),
+        url('SweetSansPro-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

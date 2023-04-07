@@ -23,7 +23,7 @@ const CustomCursor = () => {
         <>
             <div
                 style={{ left: `${x}px`, top: `${y}px`, opacity: isLoading ? '0' : '1' }}
-                className={"ring " + cursorType}
+                className={"cursorRing " + cursorType}
             />
 
             {cursorType === 'left' && (

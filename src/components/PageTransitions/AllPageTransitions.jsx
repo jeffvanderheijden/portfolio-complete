@@ -1,7 +1,8 @@
 import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useLocation } from '@reach/router'
-import "./../../helpers/styles/reset.scss"
+import "./AllPageTransitions.scss"
+import "./../../helpers/styles/global.css"
 
 const AllPageTransitions = ({ children }) => {
     const location = useLocation()
@@ -16,7 +17,7 @@ const AllPageTransitions = ({ children }) => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <main>
+                    <main className="pageWrapper">
                         {children}
                     </main>
                 </motion.div>

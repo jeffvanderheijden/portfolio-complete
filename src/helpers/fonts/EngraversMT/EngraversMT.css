@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Engravers MT';
+    src: url('EngraversMT.woff2') format('woff2'),
+        url('EngraversMT.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

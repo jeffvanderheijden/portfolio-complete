@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
 import { MouseContext } from '../../helpers/context/mouseContext'
 import "./Navigation.scss"
 import "./Hamburger.scss"
@@ -9,7 +10,17 @@ const Navigation = () => {
     const [navOpen, setNavOpen] = useState(false)
 
     return (
-        <nav className="navigation">
+        <motion.div
+            className="navigation"
+            initial={{ opacity: 0, y: -80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                type: "spring",
+                delay: 6,
+                stiffness: 160,
+                damping: 30
+            }}
+        >
             <div className="container mx-auto h-full">
                 <div className="navInner">
                     <MouseContext.Consumer>
@@ -47,7 +58,7 @@ const Navigation = () => {
                     </MouseContext.Consumer>
                 </div>
             </div>
-        </nav>
+    </motion.div>
     )
 }
 

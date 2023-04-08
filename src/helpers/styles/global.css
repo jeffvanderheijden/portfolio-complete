@@ -4,3 +4,7 @@
 
 @import url("./reset.scss");
 @import url("./fonts.scss");
+
+::selection {
+    background: #eba10e;
+}

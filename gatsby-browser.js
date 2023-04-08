@@ -3,14 +3,17 @@ import PreLoader from "./src/components/PreLoader/PreLoader"
 import AllPageTransitions from "./src/components/PageTransitions/AllPageTransitions"
 import CustomCursor from "./src/components/Cursor/CustomCursor"
 import MouseContextProvider from "./src/helpers/context/mouseContext"
+import LoadingContextProvider from "./src/helpers/context/loadingContext"
 import Navigation from "./src/components/Navigation/Navigation"
 
 export const wrapRootElement = ({ element }) => {
   return (
     <>
-      <MouseContextProvider>
-        {element}
-      </MouseContextProvider>
+      <LoadingContextProvider>
+        <MouseContextProvider>
+          {element}
+        </MouseContextProvider>
+      </LoadingContextProvider>
     </>
   )
 }

@@ -8,3 +8,7 @@
 ::selection {
     background: #eba10e;
 }
+
+body {
+    height: auto;
+}

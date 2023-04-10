@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import useMousePosition from "../../helpers/hooks/useMousePosition"
 import { MouseContext } from "../../helpers/context/mouseContext"
+import aboutImage from "./../About/Homepage/about.png"
 import './CustomCursor.scss'
 
 const CustomCursor = () => {
@@ -78,12 +79,30 @@ const CustomCursor = () => {
                 </div>
             )}
 
-            {cursorType !== 'slider' && cursorType !== 'view' && cursorType !== 'left' && cursorType !== 'right' && (
+            {cursorType === 'about' && (
                 <div
-                    className={"dot " + cursorType}
+                    className={"imageCursor " + cursorType}
                     style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
-                ></div>
+                >
+                    <img
+                        className="aboutImage" 
+                        src={aboutImage} 
+                        alt="about" 
+                    />
+                </div>
             )}
+
+            {
+                cursorType !== 'slider' && 
+                cursorType !== 'view' && 
+                cursorType !== 'left' && 
+                cursorType !== 'right' && (
+                    <div
+                        className={"dot " + cursorType}
+                        style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
+                    />
+                )
+            }
         </div>
     );
 };

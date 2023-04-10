@@ -1,18 +1,28 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useRef, useEffect } from "react"
 import { MouseContext } from '../../../helpers/context/mouseContext'
 import AnimatedText from "./AnimatedText"
-import { motion } from "framer-motion"
-import "./Header.scss"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { LoadingContext } from "../../../helpers/context/loadingContext"
+import "./Header.scss"
 
 const Header = () => {
     const [replay] = useState(true)
     const { initialLoad } = useContext(LoadingContext)
 
+    const iFrame = useRef(null)
+    const headerRef = useRef(null);
+
+    const { scrollYProgress } = useScroll({ 
+        target: headerRef,
+        offset: ["100vh 100vh", "100vh 0vh"]
+    })
+ 
+    const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
     const placeholderText = [
-        { type: "heading2", text: "I turn data into" },
+        { type: "heading2", text: "Design driven" },
         { type: "heading1", text: "experiences", color: "#eba10e" },
-        { type: "heading2", text: "people care about" }
+        { type: "heading2", text: "in an ocean of data" }
     ]
 
     const container = {
@@ -23,12 +33,30 @@ const Header = () => {
         }
     }
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const droplets = () => {
+                let event = new Event('pointermove');
+                event = JSON.parse(JSON.stringify(event));
+                const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+                event.clientX = random(500, 1000);
+                event.clientY = random(350, 600);
+                iFrame.current && iFrame.current.contentWindow.postMessage(event);
+            }
+            droplets();
+        }, Math.floor(Math.random() * (5000 - 2000)) + 2000);
+        return () => clearInterval(interval);
+    }, [])
+
     return (
-        <div className="homeHeader">
+        <>
+        <div className="homeHeaderSpacer" />
+        <div className="homeHeader" ref={{ headerRef }}>
             <MouseContext.Consumer>
                 {({ cursorChangeHandler }) => (
                     <iframe
                         src="/static/threejs.html"
+                        ref={iFrame}
                         title="Homepage header"
                         onMouseEnter={() => cursorChangeHandler("hidden")}
                         onMouseLeave={() => cursorChangeHandler("")}
@@ -36,7 +64,10 @@ const Header = () => {
                 )}
             </MouseContext.Consumer>
             {!initialLoad && (
-                <>
+                <motion.div
+                    className="w-full"
+                    style={{ opacity: textOpacity }}
+                >
                     <motion.div
                         className="w-full"
                         initial="hidden"
@@ -61,9 +92,10 @@ const Header = () => {
                             }}
                         />
                     </div>
-                </>
+                </motion.div>
             )}
-        </div>
+        </div> 
+        </>
     )
 }
 

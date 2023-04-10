@@ -12,6 +12,12 @@ module.exports = {
     "gatsby-transformer-sharp", 
     "gatsby-plugin-sass", 
     'gatsby-plugin-postcss',
+    "gatsby-plugin-sitemap", {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/icon.png"
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

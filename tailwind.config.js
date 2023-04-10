@@ -6,6 +6,9 @@ module.exports = {
     "./src/helpers/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    container: {
+      padding: '2rem',
+    },
     extend: {},
   },
   plugins: [],

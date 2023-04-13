@@ -9,11 +9,11 @@ const Header = () => {
     const [replay] = useState(true)
     const { initialLoad } = useContext(LoadingContext)
 
-    const iFrame = useRef(null)
-    const headerRef = useRef(null);
+    const iFrame = useRef()
+    const headerRef = useRef();
 
     const { scrollYProgress } = useScroll({ 
-        target: headerRef,
+        target: headerRef.current,
         offset: ["100vh 100vh", "100vh 0vh"]
     })
  

@@ -33,42 +33,41 @@ const PreLoader = ({ children }) => {
                 <div className="loadingScreen">
                     <motion.div
                         key="logoAnimation"
+                        className="logoLoader"
                         initial={{ opacity: 1, scale: 1 }}
                         animate={{ opacity: 0, scale: 1.7 }}
                         transition={{
                             delay: 3, ease: "easeInOut" 
                         }}
                     >
-                        <div className="logoLoader">
-                            <div className="inner">
+                        <div className="inner">
+                            <motion.div
+                                key="outerLogo"
+                                initial={{ scale: .7, opacity: 0 }}
+                                animate={{ rotate: 180, scale: 1, opacity: 1 }}
+                                transition={{
+                                    type: "spring",
+                                    delay: 1,
+                                    stiffness: 160,
+                                    damping: 30
+                                }}
+                            >
+                                <LogoOuter />
+                            </motion.div>
+                            <div className="brand">
                                 <motion.div
-                                    key="outerLogo"
-                                    initial={{ scale: .7, opacity: 0 }}
-                                    animate={{ rotate: 180, scale: 1, opacity: 1 }}
+                                    key="brand"
+                                    initial={{ y: 50 }}
+                                    animate={{ y: 0 }}
                                     transition={{
                                         type: "spring",
-                                        delay: 1,
-                                        stiffness: 160,
-                                        damping: 30
+                                        stiffness: 260,
+                                        damping: 30,
+                                        delay: .4
                                     }}
                                 >
-                                    <LogoOuter />
+                                    <LogoInner />
                                 </motion.div>
-                                <div className="brand">
-                                    <motion.div
-                                        key="brand"
-                                        initial={{ y: 50 }}
-                                        animate={{ y: 0 }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 260,
-                                            damping: 30,
-                                            delay: .4
-                                        }}
-                                    >
-                                        <LogoInner />
-                                    </motion.div>
-                                </div>
                             </div>
                         </div>
                     </motion.div>

@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import useMousePosition from "../../helpers/hooks/useMousePosition"
 import { MouseContext } from "../../helpers/context/mouseContext"
 import aboutImage from "./../About/Homepage/about.png"
+import about2Image from "./../About/Homepage/about2.png"
 import './CustomCursor.scss'
 
 const CustomCursor = () => {
@@ -76,19 +77,6 @@ const CustomCursor = () => {
                                 L173.261,211.555z"/>
                         </g>
                     </svg>
-                </div>
-            )}
-
-            {cursorType === 'about' && (
-                <div
-                    className={"imageCursor " + cursorType}
-                    style={{ transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)` }}
-                >
-                    <img
-                        className="aboutImage" 
-                        src={aboutImage} 
-                        alt="about" 
-                    />
                 </div>
             )}
 

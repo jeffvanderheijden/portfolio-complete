@@ -1,0 +1,57 @@
+.navigationFoldout {
+  width: 100vw;
+  height: 100vh;
+  background-color: #eba10e;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  overflow: hidden;
+}
+
+.navigationFoldoutInner {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  overflow: hidden;
+  ul {
+    li {
+      font-size: 34px;
+      line-height: 34px;
+      text-align: center;
+      padding: 10px 0px;
+      text-transform: uppercase;
+      transition: all .3s;
+      &:hover {
+        font-size: 40px;
+        font-family: 'Engravers MT';
+      }
+    }
+  }
+}
+
+.foldoutFooter {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  right: 0;
+  width: 100%;
+  transform: translateX(-50%);
+  a {
+    fill: #FFF;
+    float: right;
+  }
+}

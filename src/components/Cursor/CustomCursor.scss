@@ -5,8 +5,7 @@
 $cursorColor: #eba10e;
 $cursorColorAlpha: rgba(235, 161, 14, 0.3);
 
-.cursorRing,
-.cursorRing.white {
+.cursorRing {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,6 +19,12 @@ $cursorColorAlpha: rgba(235, 161, 14, 0.3);
     will-change: width, height, transform, border;
     z-index: 99999;
     pointer-events: none;
+    &.white {
+      border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+    &.hovered.white {
+      border-color: #FFF !important;
+    }
 }
 
 .dot,
@@ -35,10 +40,6 @@ $cursorColorAlpha: rgba(235, 161, 14, 0.3);
     pointer-events: none;
 }
 
-.cursorRing.white {
-    border: 2px solid $cursorColorAlpha;
-    border-radius: 100%;
-}
 .dot.white {
     background-color: #FFF;
 }

@@ -7,6 +7,9 @@ import "./ProjectsCarousel.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import wthShirt from './wth-shirt.png'
+import safsecMockup from './safsec-mockup.png'
+
 const ProjectsCarousel = () => {
     const projectsSlider = useRef();
 
@@ -34,7 +37,7 @@ const ProjectsCarousel = () => {
     return (
         <MouseContext.Consumer>
             {({ cursorChangeHandler }) => (
-                <div className="sliderWrapper">
+                <div id="projects" className="sliderWrapper">
                     <div className="sliderInner">
                         <div 
                             className="previousHover" 
@@ -50,13 +53,13 @@ const ProjectsCarousel = () => {
                         />
                         <Slider ref={projectsSlider} {...settings}>
                             <Link 
-                                to="/projects"
+                                to="/safsec"
                                 onMouseEnter={() => cursorChangeHandler("view")}
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >
                                 <img 
-                                    src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
-                                    alt={"Project 1"}
+                                    src={safsecMockup} 
+                                    alt={"SafSec - identity redesign"}
                                 />
                             </Link>
                             <Link 
@@ -65,8 +68,8 @@ const ProjectsCarousel = () => {
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >
                                 <img 
-                                    src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
-                                    alt={"Project 2"}
+                                    src={wthShirt} 
+                                    alt={"WTH - identity redesign & merch"}
                                 />
                             </Link>
                             <Link 
@@ -75,7 +78,7 @@ const ProjectsCarousel = () => {
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >
                                 <img 
-                                    src="https://assets.awwwards.com/awards/submissions/2023/03/6424d61b62382875943865.jpg" 
+                                    src={wthShirt} 
                                     alt={"Project 3"}
                                 />
                             </Link>
@@ -85,7 +88,7 @@ const ProjectsCarousel = () => {
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >
                                 <img 
-                                    src="https://assets.awwwards.com/awards/submissions/2023/03/641ca0fc766f0350528916.jpg" 
+                                    src={wthShirt} 
                                     alt={"Project 4"}
                                 />
                             </Link>

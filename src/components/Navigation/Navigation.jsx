@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import { motion } from "framer-motion"
 import { MouseContext } from "../../helpers/context/mouseContext"
 import "./Navigation.scss"
@@ -35,8 +36,8 @@ const Navigation = () => {
             >
               <div className="navInner">
                 <div className="logo">
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     onMouseEnter={() => {
                       navOpen ? cursorChangeHandler("hovered white") : cursorChangeHandler("hovered")
                     }}
@@ -45,7 +46,7 @@ const Navigation = () => {
                     }}
                   >
                     <LogoInner />
-                  </a>
+                  </Link>
                 </div>
                 <div
                   className="hamburger"

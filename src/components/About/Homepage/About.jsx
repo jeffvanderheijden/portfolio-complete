@@ -29,7 +29,7 @@ const About = () => {
   }, [scrollY])
 
   return (
-    <div className="aboutHome" ref={aboutRef}>
+    <div id="about" className="aboutHome" ref={aboutRef}>
       <div className="container mx-auto max-w-4xl">
         {!initialLoad && (
           <motion.div

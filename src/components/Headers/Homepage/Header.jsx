@@ -1,5 +1,5 @@
-import React, { useState, useContext, useRef } from "react"
-// import { MouseContext } from '../../../helpers/context/mouseContext'
+import React, { useState, useContext, useRef, useEffect } from "react"
+import { MouseContext } from '../../../helpers/context/mouseContext'
 import AnimatedText from "./AnimatedText"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { LoadingContext } from "../../../helpers/context/loadingContext"
@@ -9,7 +9,7 @@ const Header = () => {
     const [replay] = useState(true)
     const { initialLoad } = useContext(LoadingContext)
 
-    // const iFrame = useRef(null)
+    const iFrame = useRef(null)
     const headerRef = useRef(null)
 
     const { scrollYProgress } = useScroll({ 
@@ -33,26 +33,26 @@ const Header = () => {
         }
     }
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         const droplets = () => {
-    //             let event = new Event('pointermove');
-    //             event = JSON.parse(JSON.stringify(event));
-    //             const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-    //             event.clientX = random(500, 1000);
-    //             event.clientY = random(350, 600);
-    //             iFrame.current && iFrame.current.contentWindow.postMessage(event);
-    //         }
-    //         droplets();
-    //     }, Math.floor(Math.random() * (5000 - 2000)) + 2000);
-    //     return () => clearInterval(interval);
-    // }, [])
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const droplets = () => {
+                let event = new Event('pointermove');
+                event = JSON.parse(JSON.stringify(event));
+                const random = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+                event.clientX = random(500, 1000);
+                event.clientY = random(350, 600);
+                iFrame.current && iFrame.current.contentWindow.postMessage(event);
+            }
+            droplets();
+        }, Math.floor(Math.random() * (5000 - 2000)) + 2000);
+        return () => clearInterval(interval);
+    }, [])
 
     return (
         <>
         <div className="homeHeaderSpacer" />
         <div className="homeHeader" ref={{ headerRef }}>
-            {/* <MouseContext.Consumer>
+            <MouseContext.Consumer>
                 {({ cursorChangeHandler }) => (
                     <iframe
                         src="/static/threejs.html"
@@ -62,7 +62,7 @@ const Header = () => {
                         onMouseLeave={() => cursorChangeHandler("")}
                     />
                 )}
-            </MouseContext.Consumer> */}
+            </MouseContext.Consumer>
             {!initialLoad && (
                 <motion.div
                     className="w-full"

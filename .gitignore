@@ -2,6 +2,3 @@
 node_modules/
 .cache/
 public
-
-#allow
-!public/threejs.html

@@ -17,7 +17,6 @@ const About = () => {
 
   // Gatsby SSR fails with window undefined, hack to skip on SSR
   const isBrowser = () => typeof window !== "undefined"
-  console.log(isBrowser())
 
   const scrollY = useMotionValue(0);
   const offsetY = useTransform(scrollY, [0, (isBrowser() ? window.innerHeight : 0) * 2], [0, (isBrowser() ? -window.innerHeight : 0) * 2])

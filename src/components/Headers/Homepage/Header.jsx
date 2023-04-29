@@ -55,7 +55,7 @@ const Header = () => {
             <MouseContext.Consumer>
                 {({ cursorChangeHandler }) => (
                     <iframe
-                        src="/static/threejs.html"
+                        src="/threejs.html"
                         ref={iFrame}
                         title="Homepage header"
                         onMouseEnter={() => cursorChangeHandler("hidden")}

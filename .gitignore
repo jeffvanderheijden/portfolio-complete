@@ -4,4 +4,4 @@ node_modules/
 public
 
 #allow
-!static/threejs.html
+!public/threejs.html

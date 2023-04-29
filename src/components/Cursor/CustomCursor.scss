@@ -137,3 +137,13 @@ $cursorColorAlpha: rgba(235, 161, 14, 0.3);
         opacity: .9;
     }
 }
+
+
+// Don't show on mobile
+@media only screen and (max-width: 600px) {
+    .dot,
+    .cursorRing,
+    .imageCursor {
+        display: none;
+    }
+}

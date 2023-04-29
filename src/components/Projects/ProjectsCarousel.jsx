@@ -27,6 +27,16 @@ const ProjectsCarousel = () => {
         infinite: true,
         slidesToShow: 3,
         speed: 500,
+        responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 2
+              }
+            },
+        ],
         appendDots: dots => (
             <div>
                 <ul> {dots} </ul>

@@ -1,3 +1,7 @@
+#ignore
 node_modules/
 .cache/
-public
+public/**/*
+
+#allow
+!public/static/threejs.html

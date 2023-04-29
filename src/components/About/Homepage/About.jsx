@@ -5,7 +5,7 @@ import { LoadingContext } from "../../../helpers/context/loadingContext"
 import parallaxImage from "./about.png"
 
 const About = () => {
-  const { initialLoad } = useContext(LoadingContext)
+  const initialLoad = useContext(LoadingContext)
   const aboutRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -15,17 +15,21 @@ const About = () => {
 
   const textOpacity = useTransform(scrollYProgress, [0.5, 0], [0, 1])
 
+  // Gatsby SSR fails with window undefined, hack to skip on SSR
+  const isBrowser = () => typeof window !== "undefined"
+  console.log(isBrowser())
+
   const scrollY = useMotionValue(0);
-  const offsetY = useTransform(scrollY, [0, window.innerHeight * 2], [0, -window.innerHeight * 2])
+  const offsetY = useTransform(scrollY, [0, (isBrowser() ? window.innerHeight : 0) * 2], [0, (isBrowser() ? -window.innerHeight : 0) * 2])
 
   useEffect(() => {
     const handleScroll = () => {
-      scrollY.set(window.scrollY)
+      scrollY.set(isBrowser() ? window.scrollY : 0)
     };
 
-    window.addEventListener('scroll', handleScroll)
+    isBrowser() && window.addEventListener('scroll', handleScroll)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => isBrowser() && window.removeEventListener('scroll', handleScroll)
   }, [scrollY])
 
   return (

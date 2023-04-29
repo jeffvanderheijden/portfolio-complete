@@ -7,7 +7,7 @@ import "./Header.scss"
 
 const Header = () => {
     const [replay] = useState(true)
-    const initialLoad = useContext(LoadingContext)
+    const { initialLoad } = useContext(LoadingContext)
 
     const iFrame = useRef(null)
     const headerRef = useRef(null)

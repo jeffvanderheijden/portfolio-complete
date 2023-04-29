@@ -5,7 +5,7 @@ import { LoadingContext } from "../../../helpers/context/loadingContext"
 import parallaxImage from "./about.png"
 
 const About = () => {
-  const initialLoad = useContext(LoadingContext)
+  const { initialLoad } = useContext(LoadingContext)
   const aboutRef = useRef(null)
 
   const { scrollYProgress } = useScroll({

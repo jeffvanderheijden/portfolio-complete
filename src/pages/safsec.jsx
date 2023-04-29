@@ -24,7 +24,7 @@ const SafSec = () => {
               {/* First screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/2 text-center">
-                  <img className="m-auto" src={safsec1} />
+                  <img className="m-auto" src={safsec1} alt="SafSec" />
                   <h1 className="mb-[20px] pt-[20px]">
                     Identity redesign
                   </h1>
@@ -50,30 +50,30 @@ const SafSec = () => {
                   </p>
                 </div>
                 <div className="w-2/3">
-                  <img className="m-auto" src={safsec2} />
+                  <img className="m-auto" src={safsec2} alt="SafSec" />
                 </div>
               </div>
               {/* Third screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/2">
-                  <img className="mb-[40px] m-auto" src={safsec3} />
+                  <img className="mb-[40px] m-auto" src={safsec3} alt="SafSec" />
                   <p>
                     Many fonts were tested to try and match the company's values. I found in the end the Pirulen font 
                     to be an exceptional match. A small adjustment to the letter A allowed me to 
                     incorporate the Phalanx symbol from the hoplon shield into the visual design.
                   </p>
-                  <img className="mt-[20px] m-auto" src={safsecani} />
+                  <img className="mt-[20px] m-auto" src={safsecani} alt="SafSec" />
                 </div>
               </div>
               {/* Fourts screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/2">
-                  <img className="mb-[10px] m-auto" src={safsec6} />
+                  <img className="mb-[10px] m-auto" src={safsec6} alt="SafSec" />
                   <p>
                     The brand icon went through multiple iterations as well. Starting with the concept and ending 
                     with a highly detailed, strong and recognizable image.
                   </p>
-                  <img className="mt-[20px] m-auto" src={safsec9} />
+                  <img className="mt-[20px] m-auto" src={safsec9} alt="SafSec" />
                 </div>
               </div>
 
@@ -81,14 +81,14 @@ const SafSec = () => {
               {/* Fifth screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/3 pr-[20px]">
-                  <img src={safsec10} />
+                  <img src={safsec10} alt="SafSec" />
                   <p>
                     After the final color changes, to fit the clients preferences, we're left with a 
                     very sharp, modern and storytelling corporate identity.
                   </p>
                 </div>
                 <div className="w-2/3">
-                  <img className="mt-[40px] m-auto" src={safsec8} />
+                  <img className="mt-[40px] m-auto" src={safsec8} alt="SafSec" />
                 </div>
               </div>
             </div>

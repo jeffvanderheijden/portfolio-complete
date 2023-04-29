@@ -39,6 +39,7 @@
 
 // Arrows and dots
 .slick-dots {
+    display: none;
     position: absolute;
     bottom: 0 !important;
     left: 50%;
@@ -84,5 +85,13 @@
         width: 32px;
         height: 21px;
         display: block;
+    }
+}
+
+// Don't show on mobile
+@media only screen and (max-width: 600px) {
+    .previousHover,
+    .nextHover {
+        display: none;
     }
 }

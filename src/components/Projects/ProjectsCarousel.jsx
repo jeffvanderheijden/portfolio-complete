@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css"
 
 import wthShirt from './wth-shirt.png'
 import safsecMockup from './safsec-mockup.png'
+import maskMockup from './mask-mockup.png'
 
 const ProjectsCarousel = () => {
     const projectsSlider = useRef();
@@ -83,13 +84,13 @@ const ProjectsCarousel = () => {
                                 />
                             </Link>
                             <Link 
-                                to="/projects"
+                                to="/mask"
                                 onMouseEnter={() => cursorChangeHandler("view")}
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >
                                 <img 
-                                    src={wthShirt} 
-                                    alt={"Project 3"}
+                                    src={maskMockup} 
+                                    alt={"Mask - WDKA Assignment"}
                                 />
                             </Link>
                             <Link 

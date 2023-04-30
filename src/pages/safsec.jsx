@@ -23,7 +23,7 @@ const SafSec = () => {
             <div className="container m-auto">
               {/* First screen */}
               <div className="h-screen w-full flex items-center justify-center">
-                <div className="w-1/2 text-center">
+                <div className="sm:w-full md:w-1/2 text-center">
                   <img className="m-auto" src={safsec1} alt="SafSec" />
                   <h1 className="mb-[20px] pt-[20px]">
                     Identity redesign

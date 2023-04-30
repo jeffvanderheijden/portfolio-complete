@@ -73,7 +73,7 @@ const ProjectsCarousel = () => {
                                 />
                             </Link>
                             <Link 
-                                to="/projects"
+                                to="/wth"
                                 onMouseEnter={() => cursorChangeHandler("view")}
                                 onMouseLeave={() => cursorChangeHandler("")}
                             >

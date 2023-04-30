@@ -56,13 +56,13 @@ const Foldout = ({
                   >
                     <Link to="/#projects">Projects</Link>
                   </li>
-                  <li 
+                  {/* <li 
                     onClick={() => { setNavOpen(false) }}
                     onMouseEnter={() => cursorChangeHandler("hovered white")}
                     onMouseLeave={() => cursorChangeHandler("white")}
                   >
                     <Link to="/#contact">Contact</Link>
-                  </li>
+                  </li> */}
                 </ul>
                 <div 
                   className="foldoutFooter container"

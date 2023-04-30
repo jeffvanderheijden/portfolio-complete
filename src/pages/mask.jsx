@@ -1,6 +1,10 @@
 import React from "react"
 import { MouseContext } from './../helpers/context/mouseContext'
 
+import mask1 from "./../images/mask1.png"
+import mask2 from "./../images/mask2.png"
+import mask3 from "./../images/mask3.png"
+
 const SafSec = () => {
   return (
     <main>
@@ -26,6 +30,14 @@ const SafSec = () => {
                     <br /><br />
                     What do you think of when you hear the word MASK?
                   </p>
+                </div>
+              </div>
+              {/* Second screen */}
+              <div className="w-full flex items-center justify-center">
+                <div className="text-center">
+                  <img className="m-auto" src={mask1} alt="MASK" />
+                  <img className="m-auto" src={mask2} alt="MASK" />
+                  <img className="m-auto" src={mask3} alt="MASK" />
                 </div>
               </div>
             </div>

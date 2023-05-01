@@ -4,6 +4,7 @@ import { MouseContext } from './../helpers/context/mouseContext'
 import mask1 from "./../images/mask1.png"
 import mask2 from "./../images/mask2.png"
 import mask3 from "./../images/mask3.png"
+import maskResearch from "./../downloads/mask-research.pdf"
 
 const SafSec = () => {
   return (
@@ -17,7 +18,7 @@ const SafSec = () => {
             <div className="fixed w-full bg-black h-[80px]" />
             <div className="container m-auto">
               {/* First screen */}
-              <div className="h-screen w-full flex items-center justify-center">
+              <div className="py-40 pt-[250px] w-full flex items-center justify-center">
                 <div className="sm:w-full md:w-1/2 text-center">
                   {/* <img className="m-auto" src={safsec1} alt="SafSec" /> */}
                   <h1 className="mb-[20px] pt-[20px]">
@@ -29,6 +30,16 @@ const SafSec = () => {
                     many different people and for many different reasons.
                     <br /><br />
                     What do you think of when you hear the word MASK?
+                    <br /><br />
+                    <a 
+                      style={{ color: '#eba10e' }} 
+                      href={maskResearch} 
+                      download
+                      onMouseEnter={() => cursorChangeHandler("hovered")}
+                      onMouseLeave={() => cursorChangeHandler("")}
+                    >
+                      Download research
+                    </a>
                   </p>
                 </div>
               </div>

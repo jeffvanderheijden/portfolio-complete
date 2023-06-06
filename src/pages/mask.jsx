@@ -1,15 +1,15 @@
 import React from "react"
-import { MouseContext } from './../helpers/context/mouseContext'
+// import { MouseContext } from './../helpers/context/mouseContext'
 
-import mask1 from "./../images/mask1.png"
-import mask2 from "./../images/mask2.png"
-import mask3 from "./../images/mask3.png"
-import maskResearch from "./../downloads/mask-research.pdf"
+// import mask1 from "./../images/mask1.png"
+// import mask2 from "./../images/mask2.png"
+// import mask3 from "./../images/mask3.png"
+// import maskResearch from "./../downloads/mask-research.pdf"
 
 const SafSec = () => {
   return (
     <main>
-      <MouseContext.Consumer>
+      {/* <MouseContext.Consumer>
         {({ cursorChangeHandler }) => (
           <div
             onMouseEnter={() => cursorChangeHandler("")}
@@ -17,10 +17,9 @@ const SafSec = () => {
           >
             <div className="fixed w-full bg-black h-[80px]" />
             <div className="container m-auto">
-              {/* First screen */}
+
               <div className="py-40 pt-[250px] w-full flex items-center justify-center">
                 <div className="sm:w-full md:w-1/2 text-center">
-                  {/* <img className="m-auto" src={safsec1} alt="SafSec" /> */}
                   <h1 className="mb-[20px] pt-[20px]">
                     MASK
                   </h1>
@@ -43,7 +42,7 @@ const SafSec = () => {
                   </p>
                 </div>
               </div>
-              {/* Second screen */}
+
               <div className="w-full flex items-center justify-center">
                 <div className="text-center">
                   <img className="m-auto" src={mask1} alt="MASK" />
@@ -54,7 +53,7 @@ const SafSec = () => {
             </div>
           </div>
         )}
-      </MouseContext.Consumer>
+      </MouseContext.Consumer> */}
     </main>
   )
 }

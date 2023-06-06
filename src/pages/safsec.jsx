@@ -21,6 +21,7 @@ const SafSec = () => {
           >
             <div className="fixed w-full bg-black h-[80px]" />
             <div className="container m-auto">
+              
               {/* First screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="sm:w-full md:w-1/2 text-center">
@@ -33,6 +34,7 @@ const SafSec = () => {
                   </p>
                 </div>
               </div>
+
               {/* Second screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/3 pr-[20px]">
@@ -53,6 +55,7 @@ const SafSec = () => {
                   <img className="m-auto" src={safsec2} alt="SafSec" />
                 </div>
               </div>
+
               {/* Third screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/2">
@@ -65,6 +68,7 @@ const SafSec = () => {
                   <img className="mt-[20px] m-auto" src={safsecani} alt="SafSec" />
                 </div>
               </div>
+
               {/* Fourts screen */}
               <div className="h-screen w-full flex items-center justify-center">
                 <div className="w-1/2">

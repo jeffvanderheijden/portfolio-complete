@@ -85,6 +85,26 @@ const ProjectsCarousel = () => {
                                 />
                             </Link>
                             <Link 
+                                to="/safsec"
+                                onMouseEnter={() => cursorChangeHandler("view")}
+                                onMouseLeave={() => cursorChangeHandler("")}
+                            >
+                                <img 
+                                    src={safsecMockup} 
+                                    alt={"SafSec - identity redesign"}
+                                />
+                            </Link>
+                            <Link 
+                                to="/wth"
+                                onMouseEnter={() => cursorChangeHandler("view")}
+                                onMouseLeave={() => cursorChangeHandler("")}
+                            >
+                                <img 
+                                    src={wthShirt} 
+                                    alt={"WTH - identity redesign & merch"}
+                                />
+                            </Link>
+                            {/* <Link 
                                 to="/mask"
                                 onMouseEnter={() => cursorChangeHandler("view")}
                                 onMouseLeave={() => cursorChangeHandler("")}
@@ -103,7 +123,7 @@ const ProjectsCarousel = () => {
                                     src={addonMockup} 
                                     alt={"Add on"}
                                 />
-                            </Link>
+                            </Link> */}
                         </Slider>
                     </div>
                 </div>

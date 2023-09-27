@@ -2,7 +2,7 @@ import React, { useContext, useRef, useEffect } from "react"
 import "./About.scss"
 import { motion, useScroll, useTransform, useMotionValue } from "framer-motion"
 import { LoadingContext } from "../../../helpers/context/loadingContext"
-import parallaxImage from "./about.png"
+import parallaxImage from "./about3.png"
 
 const About = () => {
   const { initialLoad } = useContext(LoadingContext)
